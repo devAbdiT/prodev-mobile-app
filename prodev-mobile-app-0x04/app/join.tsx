@@ -1,5 +1,12 @@
-import { Text, TextInput, View, TouchableOpacity, Image } from "react-native";
-import { styles } from "@/styles/_join";
+import {
+  Text,
+  TextInput,
+  View,
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+} from "react-native";
+// import { styless } from "@/styless/_join";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
@@ -7,8 +14,8 @@ import { router } from "expo-router";
 export default function Join() {
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
-        <View style={styles.navGroup}>
+      <SafeAreaView style={styless.container}>
+        <View style={styless.navGroup}>
           <TouchableOpacity onPress={() => router.back()}>
             {" "}
             {/* Add this wrapper */}
@@ -16,42 +23,47 @@ export default function Join() {
           </TouchableOpacity>
           <Image source={require("@/assets/images/logo.png")} />
         </View>
-        <Text style={styles.largeText}>Create</Text>
-        <Text style={styles.largeText}>Account</Text>
-        <Text style={styles.smallText}>
+        <Text style={styless.largeText}>Create</Text>
+        <Text style={styless.largeText}>Account</Text>
+        <Text style={styless.smallText}>
           Enter your details to create a new account.
         </Text>
 
-        <View style={styles.formGroup}>
+        <View style={styless.formGroup}>
           <View>
-            <Text style={styles.placeholderText}>Email</Text>
-            <TextInput keyboardType="email-address" style={styles.inputField} />
+            <Text style={styless.placeholderText}>Email</Text>
+            <TextInput
+              keyboardType="email-address"
+              style={styless.inputField}
+            />
           </View>
           <View style={{ marginTop: 20 }}>
-            <Text style={styles.placeholderText}>Password</Text>
-            <View style={styles.passwordGroup}>
+            <Text style={styless.placeholderText}>Password</Text>
+            <View style={styless.passwordGroup}>
               <TextInput style={{ flex: 1 }} />
               <FontAwesome name="eye-slash" size={24} color="#7E7B7B" />
             </View>
-            <View style={styles.passwordGroup}>
+            <Text style={styless.placeholderText}>Password</Text>
+
+            <View style={styless.passwordGroup}>
               <TextInput style={{ flex: 1 }} />
               <FontAwesome name="eye-slash" size={24} color="#7E7B7B" />
             </View>
           </View>
         </View>
 
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Create</Text>
+        <TouchableOpacity style={styless.button}>
+          <Text style={styless.buttonText}>Create</Text>
         </TouchableOpacity>
 
-        <View style={styles.dividerGroup}>
-          <View style={styles.divider}></View>
-          <Text style={styles.dividerText}>OR</Text>
-          <View style={styles.divider}></View>
+        <View style={styless.dividerGroup}>
+          <View style={styless.divider}></View>
+          <Text style={styless.dividerText}>OR</Text>
+          <View style={styless.divider}></View>
         </View>
 
-        <View style={styles.socialMediaButtonGroup}>
-          <TouchableOpacity style={styles.socialMediaButton}>
+        <View style={styless.socialMediaButtonGroup}>
+          <TouchableOpacity style={styless.socialMediaButton}>
             <View
               style={{
                 flexDirection: "row",
@@ -60,13 +72,13 @@ export default function Join() {
               }}
             >
               <Image source={require("@/assets/images/google.png")} />
-              <Text style={styles.socialMediaButtonText}>
+              <Text style={styless.socialMediaButtonText}>
                 Continue with Google
               </Text>
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.socialMediaButton}>
+          <TouchableOpacity style={styless.socialMediaButton}>
             <View
               style={{
                 flexDirection: "row",
@@ -75,18 +87,132 @@ export default function Join() {
               }}
             >
               <Image source={require("@/assets/images/facebook.png")} />
-              <Text style={styles.socialMediaButtonText}>
+              <Text style={styless.socialMediaButtonText}>
                 Continue with Facebook
               </Text>
             </View>
           </TouchableOpacity>
         </View>
 
-        <View style={styles.subTextGroup}>
-          <Text style={styles.subText}> Donot have an account?</Text>
-          <Text style={styles.subTextJoin}>Join now</Text>
+        <View style={styless.subTextGroup}>
+          <Text style={styless.subText}> Donot have an account?</Text>
+          <Text style={styless.subTextJoin}>Join now</Text>
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
   );
 }
+
+const styless = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: "#fff",
+    position: "relative",
+  },
+  navGroup: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 20,
+    marginTop: 11,
+  },
+  largeText: {
+    fontSize: 40,
+    fontWeight: 700,
+  },
+  smallText: {
+    fontSize: 12,
+    color: "#7E7B7B",
+  },
+  placeholderText: {
+    fontSize: 18,
+    color: "#7E7B7B",
+    marginBottom: 7,
+  },
+  inputField: {
+    borderWidth: 1,
+    borderRadius: 10,
+    height: 50,
+    borderColor: "#7E7B7B",
+    paddingHorizontal: 10,
+  },
+  passwordGroup: {
+    flexDirection: "row",
+    borderWidth: 1,
+    alignItems: "center",
+    height: 50,
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    borderColor: "#7e7b7b",
+  },
+  formGroup: {
+    marginTop: 44,
+  },
+  forgotPasswordText: {
+    fontSize: 17,
+    marginTop: 9,
+    textAlign: "right",
+    color: "#34967C",
+  },
+  button: {
+    backgroundColor: "#2B876E",
+    height: 53,
+    borderRadius: 10,
+    marginTop: 25,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonText: {
+    fontSize: 17,
+    color: "white",
+  },
+  socialMediaButton: {
+    borderWidth: 1,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+  },
+  socialMediaButtonText: {
+    fontSize: 18,
+    color: "#0D0D0D",
+    fontWeight: 400,
+  },
+  socialMediaButtonGroup: {
+    gap: 15,
+    marginTop: 25,
+  },
+  dividerGroup: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    marginTop: 29,
+  },
+  divider: {
+    borderWidth: 0.5,
+    borderColor: "#c2c2c2",
+    flex: 1,
+  },
+  dividerText: {
+    fontSize: 17,
+    color: "#C2C2C2",
+  },
+  subTextGroup: {
+    flexDirection: "row",
+    position: "absolute",
+    bottom: 33,
+    left: 77,
+    right: 76,
+  },
+  subText: {
+    fontSize: 18,
+    color: "#b5b5b5",
+  },
+  subTextJoin: {
+    fontSize: 18,
+    color: "#FFA800",
+    fontWeight: 600,
+  },
+});
+
+export { styless };
