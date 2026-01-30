@@ -2,13 +2,18 @@ import { Text, TextInput, View, TouchableOpacity, Image } from "react-native";
 import { styles } from "@/styles/_join";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 
 export default function Join() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <View style={styles.navGroup}>
-          <Ionicons name="arrow-back" size={25} />
+          <TouchableOpacity onPress={() => router.back()}>
+            {" "}
+            {/* Add this wrapper */}
+            <Ionicons name="arrow-back" size={25} />
+          </TouchableOpacity>
           <Image source={require("@/assets/images/logo.png")} />
         </View>
         <Text style={styles.largeText}>Create</Text>

@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
-
+import { router } from "expo-router";
 export default function Index() {
   return (
     <SafeAreaProvider>
@@ -33,13 +33,29 @@ export default function Index() {
 
             <View style={{ position: "absolute", bottom: 0, width: "100%" }}>
               <View style={styles.buttonGroup}>
-                <TouchableOpacity style={styles.button}>
+                {/* <TouchableOpacity style={styles.button}>
                   <Text style={{ ...styles.textSmall, color: "black" }}>
                     Join here
                   </Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.transparentButton}>
+                  <Text style={styles.textSmall}>Sign In</Text>
+                </TouchableOpacity> */}
+                <TouchableOpacity
+                  style={styles.button}
+                  onPress={() => router.push("/join")} // Add this
+                >
+                  <Text style={{ ...styles.textSmall, color: "black" }}>
+                    Join here
+                  </Text>
+                </TouchableOpacity>
+
+                {/* Update this button */}
+                <TouchableOpacity
+                  style={styles.transparentButton}
+                  onPress={() => router.push("/signin")} // Add this
+                >
                   <Text style={styles.textSmall}>Sign In</Text>
                 </TouchableOpacity>
               </View>
