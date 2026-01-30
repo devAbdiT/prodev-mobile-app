@@ -3,7 +3,7 @@ import { styles } from "@/styles/_join";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 
-export default function Index() {
+export default function Join() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
@@ -78,7 +78,7 @@ export default function Index() {
         </View>
 
         <View style={styles.subTextGroup}>
-          <Text style={styles.subText}>Don't have an account?</Text>
+          <Text style={styles.subText}> Donot have an account?</Text>
           <Text style={styles.subTextJoin}>Join now</Text>
         </View>
       </SafeAreaView>
